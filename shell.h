@@ -106,6 +106,7 @@ typedef struct builtin
 } builtin_table;
 
 
+
 int hsh(info_t *, char **);
 int find_builtin(info_t *);
 void find_cmd(info_t *);
@@ -204,5 +205,6 @@ void check_chain(info_t *, char *, size_t *, size_t, size_t);
 int replace_alias(info_t *);
 int replace_vars(info_t *);
 int replace_string(char **, char *);
+
 
 #endif

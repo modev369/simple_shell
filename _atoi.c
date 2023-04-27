@@ -1,9 +1,6 @@
 #include "shell.h"
 
 
-
-
-
 /**
  * interactive - check if shell is interactive mode
  * @stradd: struct address

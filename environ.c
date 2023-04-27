@@ -1,15 +1,20 @@
 #include "shell.h"
 
+
+
+
 /**
  * _myenv - print current environment
  * @myinfo: Structure containing potential arguments
  * Return: Always 0
  */
+
 int _myenv(info_t *myinfo)
 {
 	print_list_str(myinfo->env);
 	return (0);
 }
+
 
 /**
  * _getenv - get value of environ var
@@ -18,6 +23,7 @@ int _myenv(info_t *myinfo)
  *
  * Return: the value
  */
+
 char *_getenv(info_t *myinfo, const char *envname)
 {
 	list_t *node = myinfo->env;
@@ -33,11 +39,14 @@ char *_getenv(info_t *myinfo, const char *envname)
 	return (NULL);
 }
 
+
+
 /**
  * _mysetenv - set a new environment variable
  * @myinfo: Structure containing potential arguments
  *  Return: Always 0
  */
+
 int _mysetenv(info_t *myinfo)
 {
 	if (myinfo->argc != 3)
@@ -50,11 +59,14 @@ int _mysetenv(info_t *myinfo)
 	return (1);
 }
 
+
+
 /**
  * _myunsetenv - delete an environment var
  * @myinfo: Structure containing potential arguments
  * Return: Always 0
  */
+
 int _myunsetenv(info_t *myinfo)
 {
 	int i;
@@ -70,11 +82,14 @@ int _myunsetenv(info_t *myinfo)
 	return (0);
 }
 
+
+
 /**
  * populate_env_list - populate the env list
  * @myinfo: Structure containing potential arguments
  * Return: Always 0
  */
+
 int populate_env_list(info_t *myinfo)
 {
 	list_t *node = NULL;

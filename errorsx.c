@@ -1,11 +1,13 @@
 #include "shell.h"
 
+
 /**
  * _eputs - print input string
  * @strprnt: the string to be printed
  *
  * Return: Nothing
  */
+
 void _eputs(char *strprnt)
 {
 	int i = 0;
@@ -19,6 +21,8 @@ void _eputs(char *strprnt)
 	}
 }
 
+
+
 /**
  * _eputchar - writes the character a to stderr
  * @a: character to print
@@ -26,6 +30,7 @@ void _eputs(char *strprnt)
  * Return: On success 1.
  * On error, -1 is returned, and errno is set
  */
+
 int _eputchar(char a)
 {
 	static int i;
@@ -41,6 +46,8 @@ int _eputchar(char a)
 	return (1);
 }
 
+
+
 /**
  * _putfd - writes a to given fdes
  * @a: The character to print
@@ -49,6 +56,7 @@ int _eputchar(char a)
  * Return: On success 1.
  * On error, -1 is returned, and errno is set
  */
+
 int _putfd(char a, int fdes)
 {
 	static int i;
@@ -64,6 +72,8 @@ int _putfd(char a, int fdes)
 	return (1);
 }
 
+
+
 /**
  * _putsfd - print string from input
  * @mystr: string to print
@@ -71,6 +81,7 @@ int _putfd(char a, int fdes)
  *
  * Return: the number of chars
  */
+
 int _putsfd(char *mystr, int fdes)
 {
 	int i = 0;

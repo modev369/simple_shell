@@ -14,7 +14,7 @@ int _erratoi(char *mystring)
 	unsigned long int results = 0;
 
 	if (*mystring == '+')
-		s++;
+		mystring++;
 	for (i = 0;  mystring[i] != '\0'; i++)
 	{
 		if (mystring[i] >= '0' && mystring[i] <= '9')

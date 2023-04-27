@@ -58,7 +58,7 @@ char *_strncat(char *strdest, char *strsrc, int ncopy)
 		j++;
 	}
 	if (j < ncopy)
-		dest[i] = '\0';
+		strdest[i] = '\0';
 	return (s);
 }
 

@@ -1,11 +1,14 @@
 #include "shell.h"
 
+
+
 /**
  * _myexit - exits the shell
  * @myinfo: Structure containing potential arguments
  * Return: exits with a status
  * (0) if myinfo.argv[0] != "exit"
  */
+
 int _myexit(info_t *myinfo)
 {
 	int exitcheck;
@@ -28,11 +31,13 @@ int _myexit(info_t *myinfo)
 	return (-2);
 }
 
+
 /**
  * _mycd - changes the current directory of the process
  * @myinfo: Structure containing potential arguments
  * Return: Always 0
  */
+
 int _mycd(info_t *myinfo)
 {
 	char *s, *dir, buffer[1024];
@@ -75,11 +80,13 @@ int _mycd(info_t *myinfo)
 	return (0);
 }
 
+
 /**
  * _myhelp - change current directory
  * @myinfo: Structure containing potential arguments
  * Return: Always 0
  */
+
 int _myhelp(info_t *myinfo)
 {
 	char **arg_array;

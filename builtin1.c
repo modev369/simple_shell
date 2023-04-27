@@ -1,5 +1,7 @@
 #include "shell.h"
 
+
+
 /**
  * _myhistory - display history list
  * @myinfo: Structure containing potential arguments
@@ -11,6 +13,8 @@ int _myhistory(info_t *myinfo)
 	return (0);
 }
 
+
+
 /**
  * unset_alias - set alias to a string
  * @myinfo: parameter struct
@@ -18,6 +22,7 @@ int _myhistory(info_t *myinfo)
  *
  * Return: Always 0 on success, 1 on error
  */
+
 int unset_alias(info_t *myinfo, char *stralias)
 {
 	char *p, c;
@@ -34,6 +39,8 @@ int unset_alias(info_t *myinfo, char *stralias)
 	return (ret);
 }
 
+
+
 /**
  * set_alias - set alias to string
  * @myinfo: parameter struct
@@ -41,6 +48,7 @@ int unset_alias(info_t *myinfo, char *stralias)
  *
  * Return: Always 0 on success, 1 on error
  */
+
 int set_alias(info_t *myinfo, char *stralias)
 {
 	char *p;
@@ -55,12 +63,15 @@ int set_alias(info_t *myinfo, char *stralias)
 	return (add_node_end(&(myinfo->alias), stralias, 0) == NULL);
 }
 
+
+
 /**
  * print_alias - print alias
  * @nodealias: alias node
  *
  * Return: Always 0 on success, 1 on error
  */
+
 int print_alias(list_t *nodealias)
 {
 	char *p = NULL, *a = NULL;
@@ -78,11 +89,14 @@ int print_alias(list_t *nodealias)
 	return (1);
 }
 
+
+
 /**
  * _myalias - mimics the alias builtin
  * @myinfo: Structure containing potential arguments
  *  Return: Always 0
  */
+
 int _myalias(info_t *myinfo)
 {
 	int i = 0;

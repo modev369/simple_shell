@@ -1,7 +1,6 @@
 #include "shell.h"
 
 
-
 /**
  * _myexit - exits the shell
  * @myinfo: Structure containing potential arguments
@@ -30,6 +29,7 @@ int _myexit(info_t *myinfo)
 	myinfo->err_num = -1;
 	return (-2);
 }
+
 
 
 /**
@@ -81,11 +81,13 @@ int _mycd(info_t *myinfo)
 }
 
 
+
 /**
  * _myhelp - change current directory
  * @myinfo: Structure containing potential arguments
  * Return: Always 0
  */
+
 
 int _myhelp(info_t *myinfo)
 {

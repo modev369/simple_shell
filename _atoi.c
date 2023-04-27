@@ -16,7 +16,7 @@ int interactive(info_t *stradd)
 
 /**
  * is_delim - determine if character is a delimeter
- * @c: char to check
+ * @a: char to check
  * @delimeter: delimeter string
  * Return: 1 if true, 0 if false
  */

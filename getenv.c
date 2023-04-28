@@ -40,7 +40,7 @@ int _unsetenv(info_t *myinfo, char *envvar)
 		p = starts_with(node->str, envvar);
 		if (p && *p == '=')
 		{
-			myinfo->env_changed = delete_node_at_index(&(info->env), i);
+			myinfo->env_changed = delete_node_at_index(&(myinfo->env), i);
 			i = 0;
 			node = myinfo->env;
 			continue;
@@ -76,8 +76,8 @@ int _setenv(info_t *myinfo, char *envvar, char *envvalue)
 	_strcat(buf, "=");
 	_strcat(buf, envvalue);
 	node = myinfo->env;
-	
-  while (node)
+
+	while (node)
 	{
 		p = starts_with(node->str, envvar);
 		if (p && *p == '=')

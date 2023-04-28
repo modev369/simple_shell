@@ -37,7 +37,7 @@ ssize_t input_buf(info_t *myinfo, char **bufx, size_t *lenx)
 			build_history_list(myinfo, *bufx, myinfo->histcount++);
 			{
 				*lenx = r;
-				myinfo->cmd_bufx = bufx;
+				myinfo->cmd_buf = bufx;
 			}
 		}
 	}

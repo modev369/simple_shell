@@ -39,21 +39,21 @@ int is_chain(info_t *info, char *buf, size_t *paddress)
  * check_chain - check chaining based on last status
  * @info: parameter struct
  * @buf: char buffer
- * @paddress: address position in buf
- * @stbuf: starting position in buf
+ * @v: address position in buf
+ * @stb: starting position in buf
  * @len: length of buf
  *
  * Return: Void
  */
-void check_chain(info_t *info, char *buf, size_t *paddress, size_t stbuf, size_t len)
+void check_chain(info_t *info, char *buf, size_t *v, size_t stb, size_t len)
 {
-	size_t j = *p;
+	size_t j = *v;
 
 	if (info->cmd_buf_type == CMD_AND)
 	{
 		if (info->status)
 		{
-			buf[stbuf] = 0;
+			buf[stb] = 0;
 			j = len;
 		}
 	}
@@ -61,12 +61,12 @@ void check_chain(info_t *info, char *buf, size_t *paddress, size_t stbuf, size_t
 	{
 		if (!info->status)
 		{
-			buf[stbuf] = 0;
+			buf[stb] = 0;
 			j = len;
 		}
 	}
 
-	*paddress = j;
+	*v = j;
 }
 
 /**

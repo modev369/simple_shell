@@ -15,24 +15,24 @@ int hsh(info_t *myinfo, char **avect)
 
 	while (r != -1 && builtin_ret != -2)
 	{
-		clear_myinfo(myinfo);
+		clear_info(myinfo);
 		if (interactive(myinfo))
 			_puts("$ ");
 		_eputchar(BUF_FLUSH);
-		r = get_input(info);
+		r = get_input(myinfo);
 		if (r != -1)
 		{
-			set_myinfo(myinfo, avect);
+			set_info(myinfo, avect);
 			builtin_ret = find_builtin(myinfo);
 			if (builtin_ret == -1)
 				find_cmd(myinfo);
 		}
 		else if (interactive(myinfo))
 			_putchar('\n');
-		free_myinfo(myinfo, 0);
+		free_info(myinfo, 0);
 	}
 	write_history(myinfo);
-	free_myinfo(myinfo, 1);
+	free_info(myinfo, 1);
 	if (!interactive(myinfo) && myinfo->status)
 		exit(myinfo->status);
 	if (builtin_ret == -2)
@@ -51,9 +51,9 @@ int hsh(info_t *myinfo, char **avect)
  * @myinfo: the parameter struct
  *
  * Return: -1 if builtin not found,
- * 	0 if builtin executed successfully,
- * 	1 if builtin found but not successful,
- * 	2 if builtin signals exit()
+ *	0 if builtin executed successfully,
+ *	1 if builtin found but not successful,
+ *	2 if builtin signals exit()
  */
 int find_builtin(info_t *myinfo)
 {
@@ -107,7 +107,7 @@ void find_cmd(info_t *myinfo)
 	if (!k)
 		return;
 
-	path = find_path(info, _getenv(myinfo, "PATH="), myinfo->argv[0]);
+	path = find_path(myinfo, _getenv(myinfo, "PATH="), myinfo->argv[0]);
 	if (path)
 	{
 		myinfo->path = path;
@@ -150,7 +150,7 @@ void fork_cmd(info_t *strinfo)
 	{
 		if (execve(strinfo->path, strinfo->argv, get_environ(strinfo)) == -1)
 		{
-			free_strinfo(strinfo, 1);
+			free_info(strinfo, 1);
 			if (errno == EACCES)
 				exit(126);
 			exit(1);
